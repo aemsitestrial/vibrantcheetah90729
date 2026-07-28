@@ -11,7 +11,7 @@
  */
 
 :root {
-  /*colors*/
+  /* colors */
   --primary-color: rgb(255 234 3); /* WKND primary color */
   --secondary-color: rgb(32 32 32); /* Secondary brand color */
   --background-color: white; /* Background color */
@@ -102,6 +102,7 @@ h6 {
 
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
+
 /* Add a partial yellow underline under H2 */
 h2::after {
   border-bottom: 2px solid var(--primary-color); /* Yellow underline */
