@@ -22,8 +22,8 @@
   --link-hover-color: black; /* Link hover color */
 
   /* fonts */
-  --heading-font: 'Roboto', sans-serif; /* Heading font */
-  --body-font: 'Open Sans', sans-serif; /* Body font */
+  --body-font-family: 'Source Sans Pro', roboto-fallback, sans-serif;
+  --heading-font-family: 'Asar', roboto-condensed-fallback, sans-serif;
   --base-font-size: 16px; /* Base font size */
 }
 
