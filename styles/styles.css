@@ -12,10 +12,10 @@
 
 :root {
   /*colors*/
-  --primary-color: rgb(255, 234, 3); /* WKND primary color */
-  --secondary-color: rgb(32, 32, 32); /* Secondary brand color */
+  --primary-color: rgb(255 234 3); /* WKND primary color */
+  --secondary-color: rgb(32 32 32); /* Secondary brand color */
   --background-color: white; /* Background color */
-  --light-color: rgb(235, 235, 235); /* Light background color */
+  --light-color: rgb(235 235 235); /* Light background color */
   --dark-color: var(--secondary-color); /* Dark text color */
   --text-color: var(--secondary-color); /* Default text color */
   --link-color: var(--text-color); /* Link color */
