@@ -178,12 +178,16 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  /* WKND specific treatments */
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border-radius: 0;
 }
 
 a.button:hover,
