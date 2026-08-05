@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-05T04:27:37.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/",
+    "originPage": "WKND Trendsetters home page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "text column (heading + paragraph + CTAs) + image column",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "page intro with text beside an image or image collage",
+      "article/case-study headers with feature image + metadata",
+      "side-by-side text and media layouts"
+    ],
+    "notSuitableFor": [
+      "repeating card grids",
+      "interactive tabbed or accordion content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-05T04:27:37.000Z"
+  }
+}

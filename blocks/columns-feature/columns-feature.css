@@ -1,0 +1,144 @@
+/* Block: columns-feature
+ * Two variants on the page, distinguished by heading level:
+ *   :has(h1) = hero feature  (text + 3-image collage, grey section, gap 64px)
+ *   :has(h2) = story feature (single image + article header, white section, gap 24px)
+ * Values extracted from source computed styles @1440px (see migration-work/columns-feature-extracted.css).
+ */
+
+/* ---------- Row layout (mobile-first: single column, DOM order) ---------- */
+.columns-feature > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* ---------- Images ---------- */
+.columns-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  aspect-ratio: 3 / 2;
+}
+
+.columns-feature .columns-feature-img-col picture {
+  display: block;
+}
+
+/* ---------- Text: headings ---------- */
+.columns-feature h1 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  line-height: 1.1; /* source 61.6px / 56px */
+  letter-spacing: -0.02em; /* source -1.12px @ 56px */
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.columns-feature h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  line-height: 1.1; /* source 44px / 40px */
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* ---------- Text: paragraphs (subheading) ---------- */
+.columns-feature p {
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--text-color);
+  margin: 24px 0 0;
+}
+
+/* ---------- Story variant: author (black 16px) + date (grey 14px) meta ---------- */
+.columns-feature:has(h2) h2 + p {
+  font-size: 16px;
+  line-height: 25.6px;
+  color: var(--text-color);
+  margin: 16px 0 0;
+}
+
+.columns-feature:has(h2) h2 + p + p {
+  font-size: 14px;
+  line-height: 22.4px;
+  color: var(--link-color);
+  margin: 8px 0 0;
+}
+
+/* ---------- Hero variant: 3-image collage (all pictures wrapped in one <p>) ---------- */
+.columns-feature:has(h1) .columns-feature-img-col p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+/* ---------- Hero variant: button group (links share one <p>, not auto-decorated) ---------- */
+.columns-feature:has(h1) p:has(a[href]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+
+/* base + primary (solid black) — applies to all links, first is primary */
+.columns-feature:has(h1) p:has(a[href]) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22.4px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.columns-feature:has(h1) p:has(a[href]) a:hover,
+.columns-feature:has(h1) p:has(a[href]) a:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* secondary (outlined white) — the second/last link */
+.columns-feature:has(h1) p:has(a[href]) a:last-of-type {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.columns-feature:has(h1) p:has(a[href]) a:last-of-type:hover,
+.columns-feature:has(h1) p:has(a[href]) a:last-of-type:focus {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* ---------- Desktop: two columns ---------- */
+@media (width >= 900px) {
+  .columns-feature > div {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .columns-feature:has(h1) > div {
+    gap: 64px;
+  }
+
+  .columns-feature:has(h2) > div {
+    gap: 24px;
+  }
+}

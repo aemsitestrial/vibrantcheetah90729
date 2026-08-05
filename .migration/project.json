@@ -1,0 +1,10 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "vibrantcheetah90729": {
+      "previewOrg": "aemsitestrial",
+      "previewSite": "vibrantcheetah90729",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

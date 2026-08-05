@@ -19,9 +19,42 @@
     ]
   },
   {
+    "id": "accordion-faq",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-article",
+    "components": [
+      "article-card"
+    ]
+  },
+  {
+    "id": "cards-gallery",
+    "components": [
+      "card-gallery-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "columns-feature",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -37,6 +70,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "tabs-testimonial",
+    "components": [
+      "tab"
     ]
   }
 ]

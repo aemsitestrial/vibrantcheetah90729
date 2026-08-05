@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://wknd-trendsetters.site/"
+      ],
+      "representativeUrl": "https://wknd-trendsetters.site/",
+      "coverageGaps": [],
+      "description": "WKND Trendsetters homepage - fashion/lifestyle landing page with hero feature, story feature, image gallery, testimonial tabs, article cards, FAQ accordion, and closing overlay hero",
+      "blocks": [
+        {
+          "name": "columns-feature",
+          "instances": [
+            "#main-content > header.section.secondary-section .grid-layout.tablet-1-column.grid-gap-xxl",
+            "#main-content > section.section:nth-of-type(1) .grid-layout.tablet-1-column.grid-gap-lg"
+          ]
+        },
+        {
+          "name": "cards-gallery",
+          "instances": [
+            "#main-content > section.section.secondary-section:nth-of-type(2) .grid-layout.grid-gap-sm"
+          ]
+        },
+        {
+          "name": "tabs-testimonial",
+          "instances": [
+            "#main-content > section.section:nth-of-type(3) .tabs-wrapper"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) .grid-layout.grid-gap-md"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            "#main-content > section.section:nth-of-type(5) .faq-list"
+          ]
+        },
+        {
+          "name": "hero-overlay",
+          "instances": [
+            "#main-content > section.section.inverse-section .grid-layout.desktop-1-column"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero feature",
+          "selector": [
+            "#main-content > header.section.secondary-section"
+          ],
+          "style": "secondary",
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Story feature",
+          "selector": [
+            "#main-content > section.section:nth-of-type(1)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Image gallery",
+          "selector": [
+            "#main-content > section.section.secondary-section:nth-of-type(2)"
+          ],
+          "style": "secondary",
+          "blocks": [
+            "cards-gallery"
+          ],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(2) > div.container > div.utility-text-align-center.utility-margin-bottom-8rem"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Testimonials",
+          "selector": [
+            "#main-content > section.section:nth-of-type(3)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-testimonial"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Latest articles",
+          "selector": [
+            "#main-content > section.section.secondary-section:nth-of-type(4)"
+          ],
+          "style": "secondary",
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            "#main-content > section.section.secondary-section:nth-of-type(4) > div.container > div.utility-text-align-center"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "FAQ",
+          "selector": [
+            "#main-content > section.section:nth-of-type(5)"
+          ],
+          "style": null,
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            "#main-content > section.section:nth-of-type(5) .grid-layout.tablet-1-column.grid-gap-xxl > div:nth-of-type(1)"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Closing overlay hero",
+          "selector": [
+            "#main-content > section.section.inverse-section"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-overlay"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}
