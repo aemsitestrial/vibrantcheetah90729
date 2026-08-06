@@ -101,13 +101,14 @@ var CustomImportScript = (() => {
         labelText = labelText.replace(/\s+/g, " ").trim();
       }
       labelCell.appendChild(document.createTextNode(labelText || `Tab ${i + 1}`));
-      const contentCell = document.createDocumentFragment();
+      const imageCell = document.createDocumentFragment();
       const img = pane.querySelector("img");
       if (img) {
-        contentCell.appendChild(document.createComment(" field:image "));
-        contentCell.appendChild(img);
+        imageCell.appendChild(document.createComment(" field:image "));
+        imageCell.appendChild(img);
       }
-      contentCell.appendChild(document.createComment(" field:text "));
+      const textCell = document.createDocumentFragment();
+      textCell.appendChild(document.createComment(" field:text "));
       const textNodes = [];
       const infoBlock = pane.querySelector(".grid-layout > div:last-child");
       if (infoBlock && !infoBlock.querySelector("img")) {
@@ -116,8 +117,8 @@ var CustomImportScript = (() => {
       if (!textNodes.length) {
         pane.querySelectorAll("p, .paragraph-xl").forEach((n) => textNodes.push(n));
       }
-      textNodes.forEach((n) => contentCell.appendChild(n));
-      cells.push([labelCell, contentCell]);
+      textNodes.forEach((n) => textCell.appendChild(n));
+      cells.push([labelCell, imageCell, textCell]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "tabs-testimonial", cells });
     element.replaceWith(block);
