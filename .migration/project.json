@@ -4,7 +4,11 @@
     "vibrantcheetah90729": {
       "previewOrg": "aemsitestrial",
       "previewSite": "vibrantcheetah90729",
-      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+      "aemSitePath": "/content/2026/30/vibrantcheetah90729",
+      "aemAssetsFolderPath": "/content/dam/2026/30/vibrantcheetah90729",
+      "aemSiteName": "vibrantcheetah90729",
+      "aemSiteTitle": "vibrantcheetah90729"
     }
   }
 }

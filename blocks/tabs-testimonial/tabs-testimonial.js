@@ -53,7 +53,11 @@ export default async function decorate(block) {
     if (pic) {
       const avatar = document.createElement('span');
       avatar.className = 'avatar';
-      avatar.append(pic.cloneNode(true));
+      const avatarPic = pic.cloneNode(true);
+      // avatar is decorative in the chip (name/role are shown as text), so
+      // clear alt text to avoid the name being announced twice by screen readers
+      avatarPic.querySelectorAll('img').forEach((img) => img.setAttribute('alt', ''));
+      avatar.append(avatarPic);
       button.append(avatar);
     }
 
