@@ -1,0 +1,123 @@
+/* Block: hero-overlay -- values extracted from source computed styles */
+
+/* Full-bleed: escape the section content max-width so the card spans the column */
+.hero-overlay-container .hero-overlay-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Card container: rounded, clipped, content anchored bottom-left */
+.hero-overlay {
+  position: relative;
+  display: flex;
+  min-height: 28rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Row 1 = background image: absolutely fills the card */
+.hero-overlay > div:first-child,
+.hero-overlay > div:first-child > div {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Collapse the EDS <p>/<picture> wrappers so the img fills the image cell */
+.hero-overlay > div:first-child p,
+.hero-overlay > div:first-child picture {
+  display: contents;
+  margin: 0;
+}
+
+.hero-overlay > div:first-child img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark gradient overlay: dark at the bottom, fading out toward the top */
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 0%) 60%);
+}
+
+/* Row 2 = text + CTA: sits above the overlay, anchored to the bottom-left */
+/* stylelint-disable-next-line no-descending-specificity */
+.hero-overlay > div:last-child {
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+  width: 100%;
+  max-width: 672px;
+  margin: 0;
+  padding: 40px 24px;
+}
+
+.hero-overlay > div:last-child > div {
+  margin: 0;
+}
+
+/* Heading (source .h1-heading = xxl tier) */
+.hero-overlay h2 {
+  margin: 0;
+  color: var(--background-color);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.hero-overlay p {
+  max-width: 544px;
+  margin: 16px 0 0;
+  color: var(--background-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.8px;
+}
+
+/* CTA: inverse pill button (white fill, black text, white border) */
+.hero-overlay .button-container {
+  margin: 32px 0 0;
+}
+
+.hero-overlay a.button:any-link {
+  margin: 0;
+  border: 2px solid var(--background-color);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+}
+
+.hero-overlay a.button:hover,
+.hero-overlay a.button:focus {
+  background-color: transparent;
+  color: var(--background-color);
+}
+
+@media (width >= 900px) {
+  .hero-overlay {
+    min-height: 34rem;
+  }
+
+  .hero-overlay > div:last-child {
+    padding: 64px;
+  }
+
+  .hero-overlay h2 {
+    line-height: 61.6px;
+    letter-spacing: -1.12px;
+  }
+}
