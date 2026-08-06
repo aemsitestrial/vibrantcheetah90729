@@ -9,8 +9,12 @@ export default async function decorate(block) {
 
   const rows = [...block.children];
   rows.forEach((row, i) => {
-    const label = row.firstElementChild; // label cell (name)
-    const content = row.lastElementChild; // content cell (image + name + role + quote)
+    // Cells: label | image | text (three columns, one per model field).
+    const cellEls = [...row.children];
+    const label = cellEls[0]; // label cell (name)
+    // Image cell = the one containing a picture; text cell = the remaining one.
+    const imageCell = cellEls.find((c) => c.querySelector('picture, img'));
+    const textCell = cellEls.slice(1).find((c) => c !== imageCell) || cellEls[cellEls.length - 1];
     const id = toClassName(label.textContent);
 
     // --- decorate the row as a tabpanel ---
@@ -20,8 +24,8 @@ export default async function decorate(block) {
     row.setAttribute('aria-labelledby', `tab-${id}`);
     row.setAttribute('role', 'tabpanel');
 
-    // restructure content into a portrait column + a quote column
-    const pic = content.querySelector('picture');
+    // restructure into a portrait column + a quote column
+    const pic = imageCell ? imageCell.querySelector('picture') : null;
     const picP = pic ? (pic.closest('p') || pic) : null;
 
     const portrait = document.createElement('div');
@@ -30,9 +34,14 @@ export default async function decorate(block) {
 
     const quote = document.createElement('div');
     quote.className = 'tabs-testimonial-quote';
-    [...content.children].forEach((child) => quote.append(child));
+    if (textCell) [...textCell.children].forEach((child) => quote.append(child));
 
-    content.append(portrait, quote);
+    // clear original cells, then append a grid wrapper holding the two columns
+    // (CSS targets `.tabs-testimonial-panel > div` as the 2-column grid)
+    cellEls.forEach((c) => c.remove());
+    const grid = document.createElement('div');
+    grid.append(portrait, quote);
+    row.append(grid);
 
     // extract the name + role used for the avatar chip
     const nameEl = quote.querySelector('strong');
