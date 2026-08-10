@@ -4,9 +4,10 @@ const QUERY_URL = `${AEM_HOST}/graphql/execute.json/EDS-Project/article-list`;
 export default async function decorate(block) {
   const response = await fetch(QUERY_URL, {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json',
-        'Authorization': 'Basic YWRtaW46YWRtaW4='
-     },
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Basic YWRtaW46YWRtaW4=',
+    },
   });
 
   if (!response.ok) return;
